@@ -1,0 +1,12 @@
+[
+  {
+    "file": "stacked-twitter-cards.tsx",
+    "style_tags": ["social-proof", "twitter-style", "stacked-cards", "interactive", "playful"],
+    "description": "Three tweet-styled testimonial cards stacked and skewed on top of each other like a hand of cards. Hovering (or tapping on mobile) the back card spreads the cards apart to reveal the ones underneath, with each card going from grayscale to full color and lifting slightly. Each card mimics a real tweet: avatar, name, verified badge, handle, Twitter/X icon, testimonial text, date, like count, and retweet count, and links out to the source tweet URL.",
+    "example_prompts": [
+      "Testimonial section styled like stacked tweets that spread apart on hover",
+      "Social proof section with Twitter-style cards showing likes and retweets",
+      "Playful stacked testimonial cards with a grayscale-to-color hover effect"
+    ]
+  }
+]

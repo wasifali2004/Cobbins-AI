@@ -1,0 +1,12 @@
+[
+  {
+    "file": "toggle-tiered-pricing-cards.tsx",
+    "style_tags": ["pricing-table", "toggle", "animated-numbers", "highlighted-tier", "saas"],
+    "description": "Three-tier pricing section (Basic, Pro, Business) with a monthly/yearly frequency toggle above the cards. Prices animate between values using NumberFlow when the frequency changes, and a discount-percentage badge appears automatically on yearly billing. The middle 'Pro' plan is visually highlighted (scaled up, shaded header/footer, 'Popular' badge). Each card lists checkmarked features and ends with a CTA button, outlined for standard plans and filled for the highlighted plan.",
+    "example_prompts": [
+      "Pricing section with three tiers and a monthly/yearly toggle",
+      "SaaS pricing cards with an animated price change and a highlighted popular plan",
+      "Pricing table with discount badge when switching to yearly billing"
+    ]
+  }
+]

@@ -1,0 +1,153 @@
+// Prisma Schema — Cobbins AI (Prisma 7)
+// Database URL is configured in prisma.config.ts, not here.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ─── User ───────────────────────────────────────────────────────────────────
+
+model User {
+  id            String    @id @default(uuid())
+  name          String
+  email         String    @unique
+  emailVerified DateTime?
+  image         String?
+  passwordHash  String?   // null for OAuth-only users
+  role          String    @default("user")
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  accounts           Account[]
+  sessions           Session[]
+  credits            Credit?
+  transactions       CreditTransaction[]
+  generatedPages     GeneratedPage[]
+  passwordResetTokens PasswordResetToken[]
+
+  @@map("users")
+}
+
+// ─── OAuth Accounts ──────────────────────────────────────────────────────────
+
+model Account {
+  id                String  @id @default(uuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+// ─── Sessions ────────────────────────────────────────────────────────────────
+
+model Session {
+  id           String   @id @default(uuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@map("verification_tokens")
+}
+
+// Single-use, short-lived tokens for the forgot-password flow. Only a hash
+// of the token is stored (like a password) so a database read alone can't
+// be used to reset someone's account — the raw token only ever exists in
+// the emailed link.
+model PasswordResetToken {
+  id        String   @id @default(uuid())
+  userId    String   @map("user_id")
+  tokenHash String   @unique @map("token_hash")
+  expiresAt DateTime @map("expires_at")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("password_reset_tokens")
+}
+
+// ─── Credits ─────────────────────────────────────────────────────────────────
+
+model Credit {
+  id        String   @id @default(uuid())
+  userId    String   @unique
+  balance   Int      @default(100)
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("credits")
+}
+
+model CreditTransaction {
+  id          String   @id @default(uuid())
+  userId      String
+  amount      Int
+  description String
+  createdAt   DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("credit_transactions")
+}
+
+// ─── Component Library ──────────────────────────────────────────────────────
+// `embedding` is pgvector's `vector(1536)` type, created and indexed (ivfflat,
+// cosine ops) directly in Supabase — not managed by Prisma. Do not run
+// `prisma db push`/`migrate` against this model; it would try to reconcile
+// that index and could drop or replace it. Use raw SQL for schema changes here.
+
+model Component {
+  id             String                 @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  category       String
+  file           String
+  styleTags      String[]               @map("style_tags")
+  description    String
+  examplePrompts String[]               @map("example_prompts")
+  code           String
+  embedding      Unsupported("vector")?
+
+  @@unique([category, file])
+  @@map("components")
+}
+
+model GeneratedPage {
+  id                String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId            String   @map("user_id")
+  prompt            String
+  sections          Json
+  code              String
+  referenceImageUrl String?  @map("reference_image_url")
+  referenceStyle    String?  @map("reference_style")
+  createdAt         DateTime @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("generated_pages")
+}

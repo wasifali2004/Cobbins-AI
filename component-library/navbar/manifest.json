@@ -1,0 +1,22 @@
+[
+  {
+    "file": "header-navbar.tsx",
+    "style_tags": ["minimal", "underline-links", "bordered", "wordmark", "mobile-disclosure"],
+    "description": "A clean, minimal site header with a bordered top-and-bottom rule, a wordmark logo on the left, an optional slot for a small announcement banner beside it, and a row of plain text links on the right. Below the medium breakpoint the links collapse behind a hamburger icon into a simple stacked list, each link staggering in with a short fade/slide-in animation as the menu opens. No background color of its own, so it reads as sitting directly on the page.",
+    "example_prompts": [
+      "A minimal navbar with a border on top and bottom and simple text links",
+      "Simple site header with a logo, a few nav links, and a mobile hamburger menu",
+      "Clean navigation bar with an optional announcement banner next to the logo"
+    ]
+  },
+  {
+    "file": "centered-nav-header.tsx",
+    "style_tags": ["three-column", "centered-links", "saas", "mobile-drawer", "sign-in-cta"],
+    "description": "A three-column SaaS navbar: a small logo mark and wordmark pinned to the far left, the main nav links centered in the middle of the bar independent of the logo/actions width, and a 'Sign In' link plus a solid primary 'Start Free Trial' button on the right, separated by a thin vertical divider. On mobile, the links and actions collapse into a right-side sliding drawer (dimmed backdrop, slide-in panel) triggered by a menu icon.",
+    "example_prompts": [
+      "SaaS navbar with the logo on the left, nav links centered, and sign in / CTA buttons on the right",
+      "Navigation bar with a centered menu and a mobile slide-out drawer",
+      "Header with logo, centered nav links, a sign-in link, and a primary CTA button"
+    ]
+  }
+]

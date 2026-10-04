@@ -1,0 +1,22 @@
+[
+  {
+    "file": "dot-pattern-background.tsx",
+    "style_tags": ["minimal", "pattern", "decorative", "svg", "subtle"],
+    "description": "Lightweight SVG dot-grid pattern rendered as an absolutely positioned full-size background layer. Dot size, spacing, and offset are all configurable via props (width, height, cx, cy, cr), and it accepts a className so a radial-gradient mask can be applied to fade the dots out toward the edges. Purely decorative and non-interactive; meant to sit behind hero or section content to add subtle texture.",
+    "example_prompts": [
+      "Subtle dot pattern background behind a hero section",
+      "Minimal SVG grid of dots that fades out with a radial mask",
+      "Decorative background texture for a card or section, not too busy"
+    ]
+  },
+  {
+    "file": "kinetic-particle-background.tsx",
+    "style_tags": ["dark", "interactive", "canvas", "particle", "atmospheric", "premium"],
+    "description": "Full-screen animated canvas background with roughly 1000 shard-shaped particles drifting across a dark charcoal backdrop. Particles react to the cursor with a magnetic vortex/swirl pull and glow brighter under friction the closer and faster they move near the pointer, with a trailing motion-blur effect. Includes a custom dot cursor and an optional centered text overlay. Best for a full hero/landing background that wants a moody, high-end, kinetic feel rather than a static image.",
+    "example_prompts": [
+      "Dark interactive particle background that reacts to mouse movement",
+      "Premium atmospheric hero background with glowing particles and a vortex hover effect",
+      "Full-screen animated canvas background for a landing page with a custom cursor"
+    ]
+  }
+]

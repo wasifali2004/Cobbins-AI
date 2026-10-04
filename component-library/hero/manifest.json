@@ -1,0 +1,42 @@
+[
+  {
+    "file": "glow-badge-hero.tsx",
+    "style_tags": ["minimal", "centered", "gradient", "glow", "dark-mode"],
+    "description": "Minimal centered hero with a rounded eyebrow badge above a large gradient-clipped headline, a muted subtitle, and a single primary CTA button. Uses a soft radial glow behind the content and a subtle grid background, with fade-in/fade-up entrance animations. Supports light and dark mode via a black-to-transparent vs white-to-transparent radial gradient swap. No navigation header included, so it works as a standalone top-of-page section.",
+    "example_prompts": [
+      "A clean, minimal hero section with a gradient headline and a badge above it",
+      "Hero with a soft glowing background and one CTA button, no navbar",
+      "Centered landing page hero with dark mode support and subtle grid background"
+    ]
+  },
+  {
+    "file": "nav-hero-with-screenshot-and-logos.tsx",
+    "style_tags": ["saas", "product-screenshot", "logo-cloud", "nav-included", "3d-perspective"],
+    "description": "Full-width SaaS landing hero bundled with its own responsive navigation bar (logo, nav links, mobile hamburger menu, login/signup buttons). Centered headline, supporting paragraph, and single CTA sit above a large 3D-tilted product screenshot with separate light and dark mode images. Followed by a 'trusted by' logo cloud section showing partner/customer logos in grayscale. Best used as the very first section of a page since it includes the header.",
+    "example_prompts": [
+      "SaaS hero section with a navbar, centered headline, and a 3D product screenshot below",
+      "Landing page top section with a logo cloud of customer logos underneath the hero",
+      "Hero with built-in responsive nav and a tilted app screenshot mockup"
+    ]
+  },
+  {
+    "file": "split-hero-with-logo-slider.tsx",
+    "style_tags": ["split-layout", "two-column", "logo-slider", "nav-included", "product-focused"],
+    "description": "Two-column hero with left-aligned headline, supporting copy, and two CTA buttons (primary and ghost) next to a large decorative image on the right that inverts for dark mode. Includes its own sticky navigation bar with logo, links, and a mobile menu toggle. Below the hero, an auto-scrolling infinite logo slider with progressive blur fade at both edges displays partner/customer brand logos, pausing on hover.",
+    "example_prompts": [
+      "Split hero with text on the left and a big image on the right, plus a scrolling logo strip below",
+      "Hero section with two CTA buttons and an infinite auto-scrolling customer logo carousel",
+      "Product landing hero with left-aligned copy, right-side hero image, and built-in nav"
+    ]
+  },
+  {
+    "file": "financial-dashboard-hero.tsx",
+    "style_tags": ["fintech", "light-mode", "gradient", "dual-cta", "product-frame", "scroll-reveal"],
+    "description": "A light, airy fintech/SaaS hero on a soft blue-tinted background: a pill-shaped 'New' announcement badge, a very large centered headline, a supporting paragraph, and two gradient CTA buttons side by side (a blue primary and a neutral secondary). Below the copy sits a large frosted-glass panel framing a placeholder product/dashboard preview. Every element staggers into view with a fade-up reveal as it scrolls into the viewport rather than animating all at once on load. No navigation header included, so it works as a standalone top-of-page section.",
+    "example_prompts": [
+      "Light fintech hero with a badge, big centered headline, and two gradient CTA buttons",
+      "SaaS hero on a soft blue background with a frosted-glass dashboard preview panel below",
+      "Hero section where the badge, headline, and buttons fade up into view as you scroll"
+    ]
+  }
+]

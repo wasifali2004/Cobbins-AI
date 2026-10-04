@@ -1,0 +1,22 @@
+[
+  {
+    "file": "flow-arrow-button.tsx",
+    "style_tags": ["animated", "hover-effect", "pill-shaped", "micro-interaction"],
+    "description": "Pill-shaped outlined button with an elaborate hover micro-interaction: an arrow slides in from the left while the original right-side arrow slides out, the label text shifts to make room, and a dark circle expands from the center to fill the entire button while its corners tighten from fully round to slightly rounded. Text and icon colors invert to white against the filled dark background on hover, with a slight scale-down on click.",
+    "example_prompts": [
+      "Pill button with a cool hover animation where a circle expands to fill it",
+      "CTA button with arrows that slide in and out on hover",
+      "Outlined rounded button that fills dark and turns text white on hover"
+    ]
+  },
+  {
+    "file": "interactive-hover-button.tsx",
+    "style_tags": ["animated", "hover-effect", "pill-shaped", "theme-aware", "minimal"],
+    "description": "Compact pill-shaped button with a two-layer hover swap: the label starts centered and on hover slides right while fading out, as a second layer (the same label plus a trailing arrow icon) slides in from the right to replace it. Underneath, a small dot in the accent color grows and expands to fill the entire button as a background wash during the same hover. Uses the page's background/foreground/primary theme tokens directly, so it adapts automatically between light and dark mode with no separate dark-mode styling needed.",
+    "example_prompts": [
+      "Small pill button where the text slides out and an arrow slides in on hover",
+      "Minimal button with a growing dot that fills the background on hover",
+      "Theme-aware hover button that works in both light and dark mode automatically"
+    ]
+  }
+]

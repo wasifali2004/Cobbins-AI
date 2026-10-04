@@ -1,0 +1,17 @@
+node_modules/
+.npm-cache/
+.next/
+dist/
+.env
+.env.local
+.env.*.local
+*.log
+.DS_Store
+coverage/
+*.tsbuildinfo
+
+# Local Claude Code session/tooling state, not app source
+.claude/
+
+# Ad-hoc QA screenshots/logs generated while developing, not source
+artifacts/

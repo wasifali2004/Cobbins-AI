@@ -1,0 +1,12 @@
+[
+  {
+    "file": "blur-reveal-accordion-faq.tsx",
+    "style_tags": ["accordion", "two-column", "blur-reveal", "animated", "saas"],
+    "description": "Two-column FAQ section with a heading, supporting copy, and a support-link paragraph on the left, and a collapsible single-open accordion of questions on the right. Each answer text animates in with a per-letter staggered blur-to-focus reveal using framer-motion when its accordion item opens. Includes a mobile-only contact link below the accordion for small screens.",
+    "example_prompts": [
+      "FAQ section with an accordion and a nice text reveal animation for the answers",
+      "Two column FAQ layout with heading on the left and expandable questions on the right",
+      "Animated FAQ accordion where the answer fades and blurs into view"
+    ]
+  }
+]
